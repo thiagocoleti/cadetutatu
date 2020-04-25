@@ -8,6 +8,7 @@
 	$_deptousuario = $_POST["deptousuario"];
 
 	$_acao = $_POST["acao"];
+//	echo $_acao;
 
 	if ($_acao == "INCLUIR"){
 

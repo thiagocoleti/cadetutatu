@@ -39,7 +39,9 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4"><img src="./img/logo.png" width=180 height=150></h1>
                   </div>
+
                   <form class="user" action="usuarios.php" method="POST" style="padding: 0px 20px">
+                    <input type="hidden" name="acao" value="LOGIN">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="emailusuario" placeholder="Enter Email Address...">
                     </div>
@@ -52,9 +54,14 @@
                         <label class="custom-control-label" for="customCheck">Lembrar senha</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn botao btn-user btn-block form-group">
-                      Entrar
-                    </a>
+
+                    <div class="center">
+
+                    <!--<button type="submit" class="btn botao btn-user btn-block form-group">Acessar</button> -->
+                     <a href="home.php" class="btn botao btn-user btn-block form-group">Acessar</a>
+
+                  </div>
+
                   <hr>
                     <!--<a href="index.html" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
