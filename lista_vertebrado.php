@@ -72,7 +72,7 @@
           <span>Vertebrados</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
@@ -101,8 +101,8 @@
       </li>
 
       <!-- Divider 
-      <hr class="sidebar-divider">-->
-
+      <hr class="sidebar-divider">
+-->
 
       <!-- Nav Item - Pages Collapse Menu 
       <li class="nav-item">
@@ -143,7 +143,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -162,62 +162,33 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div class="card card-body" style="padding: 20px 70px;">
-            <h4>Cadastrar referência</h4>
-            <hr>
-            <form id="form-cadReferencia" method="post">
-              <label>Selecione uma invertebrado</label>
-              <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, a lista de referências já cadastradas deve ser exibida na GRID abaixo -->
-              <div class="form-group">
-                <div class="input-group">                
-                    <select class="form-control" id="sel1">
-                      <option>Animal 1</option>
-                      <option>Animal 2</option>
-                      <option>Animal 3</option>
-                      <option>Animal 4</option>
-                    </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cad-referencia">Referência</label>
-                <textarea id="cad-referencia" name="referencia" class="form-control"></textarea>
-              </div>
-              <hr>
-              <div style="float: right">
-                <button id="btn-cadReferencia" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Aguarde..." type="submit"style="box-shadow: none !important;">Cadastrar</button>
-              </div>
-            </form>
-
-            <br>
-            <!-- essa tabela deve ser exibida com as referências cadatradas para o invertebrado escolhido. Antes da escolha na combo, a tabela deve ficar invisível -->
-            <div class="container">
-               <table class="table table-striped">
-                      <thead>
-                        <tr>                          
-                          <th scope="col">Invertebrado</th>
-                          <th scope="col">Referência</th>                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>                          
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>                          
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>                          
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-            </div>
-
-          </div>
-
-          <div class="container">
-
+          	<h4>Lista de Vertebrados Cadastrados</h4>
+          <table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nome Vulgar</th>
+			      <th scope="col">Nome Científico</th>
+			      <th scope="col">Ações</th>			      
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>			      
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+			    </tr>
+			    <tr>			      
+			      <td>Jacob</td>
+			      <td>Thornton</td>
+			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+			    </tr>
+			    <tr>			      
+			      <td>Larry</td>
+			      <td>the Bird</td>
+			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+			    </tr>
+			  </tbody>
+			</table>
           </div>
 
 

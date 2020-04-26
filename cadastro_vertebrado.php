@@ -27,6 +27,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
+       <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
@@ -48,7 +49,7 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-spider"></i>
           <span>Invertebrados</span>
@@ -72,7 +73,7 @@
           <span>Vertebrados</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
@@ -99,7 +100,6 @@
           </div>
         </div>
       </li>
-
       <!-- Divider 
       <hr class="sidebar-divider">-->
 
@@ -121,6 +121,9 @@
       </div>
 
     </ul>
+
+
+
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -143,7 +146,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -161,64 +164,68 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <div class="card card-body" style="padding: 20px 70px;">
-            <h4>Cadastrar referência</h4>
-            <hr>
-            <form id="form-cadReferencia" method="post">
-              <label>Selecione uma invertebrado</label>
-              <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, a lista de referências já cadastradas deve ser exibida na GRID abaixo -->
-              <div class="form-group">
-                <div class="input-group">                
-                    <select class="form-control" id="sel1">
-                      <option>Animal 1</option>
-                      <option>Animal 2</option>
-                      <option>Animal 3</option>
-                      <option>Animal 4</option>
-                    </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cad-referencia">Referência</label>
-                <textarea id="cad-referencia" name="referencia" class="form-control"></textarea>
-              </div>
-              <hr>
-              <div style="float: right">
-                <button id="btn-cadReferencia" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Aguarde..." type="submit"style="box-shadow: none !important;">Cadastrar</button>
-              </div>
-            </form>
-
-            <br>
-            <!-- essa tabela deve ser exibida com as referências cadatradas para o invertebrado escolhido. Antes da escolha na combo, a tabela deve ficar invisível -->
-            <div class="container">
-               <table class="table table-striped">
-                      <thead>
-                        <tr>                          
-                          <th scope="col">Invertebrado</th>
-                          <th scope="col">Referência</th>                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>                          
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>                          
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>                          
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
+        <div class="card card-body">
+        <h4>Cadastrar de Vertebrado</h4>
+        <hr>
+        <form method="post" action="" id="form-cadInvertebrado">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="cad-nomeVulgar">Nome vulgar</label>
+              <input type="text" class="form-control" id="cad-nomeVulgar" name="nomeVulgar"> 
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cad-nomeCientifico">Nome científico</label>
+              <input type="text" class="form-control" id="cad-nomeCientifico" name="nomeCientifico"> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="cad-ordem">Ordem</label>
+              <input type="text" class="form-control" id="cad-ordem" name="ordem"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cad-familia">Familia</label>
+              <input type="text" class="form-control" id="cad-familia" name="familia"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cad-autor">Autor</label>
+              <input type="text" class="form-control" id="cad-autor" name="autor"> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="cad-habitat">Habitat</label>
+              <input type="text" class="form-control" id="cad-habitat" name="habitat"> 
+            </div> 
+            <div class="form-group col-md-4">
+              <label for="cad-alimentacao">Alimentação</label>
+              <input type="text" class="form-control" id="cad-alimentacao" name="alimentacao"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cad-habitos">Hábitos</label>
+              <input type="text" class="form-control" id="cad-habitos" name="habitos"> 
             </div>
 
           </div>
-
-          <div class="container">
-
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="cad-distribuicaoGeografica">Distribuição geográfica</label>
+              <input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica"> 
+            </div>
           </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="cad-outrasinformacoes">Outras informações</label>
+              <input type="text" class="form-control" id="cad-outrasinformacoes" name="cad-outrasinformacoes"> 
+            </div>
+          </div>
+
+          <hr>
+          <div style="float: right">
+            <button id="btn-cadInvertebrado" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
+          </div>
+        </form>
+      </div>
 
 
         </div>
@@ -261,7 +268,7 @@
         <div class="modal-body">Selecione sair para deslogar.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="login.html">Sair</a>
         </div>
       </div>
     </div>

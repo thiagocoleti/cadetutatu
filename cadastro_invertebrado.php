@@ -49,7 +49,7 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-spider"></i>
           <span>Invertebrados</span>
@@ -59,7 +59,9 @@
             <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_invertebrado.html">Galeria</a>            
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -71,11 +73,13 @@
           <span>Vertebrados</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_vertebrado.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_vertebrado.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_vertebrado.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_vertebrado.html">Galeria</a>
+         <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_vertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -87,14 +91,15 @@
         </a>
         <div id="collapsePlant" class="collapse" aria-labelledby="headingPlant" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_planta.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_planta.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_planta.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_planta.html">Galeria</a>
+            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
-
       <!-- Divider 
       <hr class="sidebar-divider">-->
 
@@ -141,8 +146,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>                
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -164,7 +168,8 @@
         <div class="card card-body">
         <h4>Cadastrar invertebrado</h4>
         <hr>
-        <form method="post" action="" id="form-cadInvertebrado">
+        <form method="post" action="" id="invertebrado.php">
+          <input type="hidden" id="acao" name="acao" value="INCLUIR">
           <div class="row">
             <div class="form-group col-md-6">
               <label for="cad-nomeVulgar">Nome vulgar</label>

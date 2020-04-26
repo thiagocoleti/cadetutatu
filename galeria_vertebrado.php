@@ -48,7 +48,7 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-spider"></i>
           <span>Invertebrados</span>
@@ -143,7 +143,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -162,13 +162,14 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div class="card card-body" style="padding: 20px 70px;">
-            <h4>Cadastrar referência</h4>
+            <h4>Galeria de Vertebrado</h4>
             <hr>
             <form id="form-cadReferencia" method="post">
-              <label>Selecione uma invertebrado</label>
-              <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, a lista de referências já cadastradas deve ser exibida na GRID abaixo -->
+              <label>Selecione uma Vertebrado</label>
               <div class="form-group">
-                <div class="input-group">                
+                <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, as imagens já cadastradas devem ser exibida em formato de paineis -->
+                <div class="input-group">
+                  <div class="input-group">                
                     <select class="form-control" id="sel1">
                       <option>Animal 1</option>
                       <option>Animal 2</option>
@@ -176,10 +177,11 @@
                       <option>Animal 4</option>
                     </select>
                 </div>
+                </div>
               </div>
               <div class="form-group">
-                <label for="cad-referencia">Referência</label>
-                <textarea id="cad-referencia" name="referencia" class="form-control"></textarea>
+                <label for="exampleFormControlFile1">Selecione a imagem</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
               </div>
               <hr>
               <div style="float: right">
@@ -187,37 +189,30 @@
               </div>
             </form>
 
-            <br>
-            <!-- essa tabela deve ser exibida com as referências cadatradas para o invertebrado escolhido. Antes da escolha na combo, a tabela deve ficar invisível -->
-            <div class="container">
-               <table class="table table-striped">
-                      <thead>
-                        <tr>                          
-                          <th scope="col">Invertebrado</th>
-                          <th scope="col">Referência</th>                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>                          
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>                          
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>                          
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <!--painel de imagens já cadastradas -->
+            <div class="row">
+              <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
             </div>
 
-          </div>
+            <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
+            </div>            
+           
 
-          <div class="container">
-
+            <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
+            </div>           
+            </div>
           </div>
 
 

@@ -48,7 +48,7 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
- <li class="nav-item">
+   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-spider"></i>
           <span>Invertebrados</span>
@@ -58,7 +58,9 @@
             <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_invertebrado.html">Galeria</a>            
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -70,11 +72,13 @@
           <span>Vertebrados</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_vertebrado.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_vertebrado.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_vertebrado.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_vertebrado.html">Galeria</a>
+         <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_vertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -86,10 +90,12 @@
         </a>
         <div id="collapsePlant" class="collapse" aria-labelledby="headingPlant" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_planta.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_planta.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_planta.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_planta.html">Galeria</a>
+            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -137,8 +143,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -163,22 +168,52 @@
             <form id="form-cadReferencia" method="post">
               <label>Selecione uma invertebrado</label>
               <div class="form-group">
+                <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, as imagens já cadastradas devem ser exibida em formato de paineis -->
                 <div class="input-group">
-                  <input class="form-control" type="text" id="cad-nomeCientifico" name="nomeCientifico" placeholder="Clique no botão para pesquisar" disabled="" readonly="">
-                  <div class="input-group-btn">
-                    <button class="btn btn-sucesso" type="button" id="btn-modalPesquisarPlantas"><span><i class="fa fa-search"></i></span></button>
-                  </div>
+                  <div class="input-group">                
+                    <select class="form-control" id="sel1">
+                      <option>Animal 1</option>
+                      <option>Animal 2</option>
+                      <option>Animal 3</option>
+                      <option>Animal 4</option>
+                    </select>
+                </div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="cad-referencia">Referência</label>
-                <textarea id="cad-referencia" name="referencia" class="form-control"></textarea>
+                <label for="exampleFormControlFile1">Selecione a imagem</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
               </div>
               <hr>
               <div style="float: right">
                 <button id="btn-cadReferencia" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Aguarde..." type="submit"style="box-shadow: none !important;">Cadastrar</button>
               </div>
             </form>
+
+            <!--painel de imagens já cadastradas -->
+            <div class="row">
+              <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_invertebrados.jpg" alt="Exemplo Invertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_invertebrados.jpg" alt="Exemplo Invertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
+            </div>            
+           
+
+            <div class="card" style="width: 25%;">
+              <img class="card-img-top" src="img/ex_invertebrados.jpg" alt="Exemplo Invertebrado">
+              <div class="card-body">
+                <p class="card-text">Algum texto para imagem</p>
+              </div>
+            </div>           
+            </div>
           </div>
 
 

@@ -72,7 +72,7 @@
           <span>Vertebrados</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
@@ -143,7 +143,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -165,7 +165,7 @@
             <h4>Cadastrar referência</h4>
             <hr>
             <form id="form-cadReferencia" method="post">
-              <label>Selecione uma invertebrado</label>
+              <label>Selecione um vertebrado</label>
               <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, a lista de referências já cadastradas deve ser exibida na GRID abaixo -->
               <div class="form-group">
                 <div class="input-group">                
@@ -193,7 +193,7 @@
                <table class="table table-striped">
                       <thead>
                         <tr>                          
-                          <th scope="col">Invertebrado</th>
+                          <th scope="col">Vertebrado</th>
                           <th scope="col">Referência</th>                          
                         </tr>
                       </thead>

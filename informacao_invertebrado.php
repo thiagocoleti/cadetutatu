@@ -39,7 +39,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="home.php">
           <i class="fas fa-home"></i>
           <span>Home</span></a>
       </li>
@@ -48,7 +48,7 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-          <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-spider"></i>
           <span>Invertebrados</span>
@@ -58,7 +58,9 @@
             <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
             <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_invertebrado.html">Galeria</a>            
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -71,10 +73,12 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_vertebrado.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_vertebrado.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_vertebrado.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_vertebrado.html">Galeria</a>
+            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
@@ -86,10 +90,12 @@
         </a>
         <div id="collapsePlant" class="collapse" aria-labelledby="headingPlant" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="cadastro_planta.html">Cadastrar</a>
-            <a class="collapse-item" href="informacao_planta.html">Adicionar informação</a>
-            <a class="collapse-item" href="referencia_planta.html">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_planta.html">Galeria</a>
+            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
+            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
+            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
+            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <hr class="sidebar-divider">
+            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
