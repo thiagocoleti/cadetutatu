@@ -58,7 +58,7 @@
                     <div class="center">
 
                     <button type="submit" class="btn botao btn-user btn-block form-group">Acessar</button> 
-                     <a href="home.php" class="btn botao btn-user btn-block form-group">Acessar</a>
+                    <!-- <a href="home.php" class="btn botao btn-user btn-block form-group">Acessar</a> -->
 
                   </div>
 

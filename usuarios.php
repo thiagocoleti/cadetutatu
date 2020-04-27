@@ -25,7 +25,7 @@
 		 if ($qtdeUsu == 1){
 		 	session_start();	        
 	        $_SESSION["usuario"] = $_emailusuario;	    
-	        echo "usuario OK!!";    
+	        header("Location: home.php");
 		 }
 		 else{
 		 	echo "Usuário Inválido!!!";
@@ -36,8 +36,9 @@
 
 function verificarLogin($usu, $senha){
 	 include './conexaoMySQL.php';
-	$sql = "select count(*) as valido from usuarios where email_usuario = '$_emailusuario'
-		 and senha_usuario = '$_senhausuario'";
+	$sql = "select count(*) as qtde from usuarios where email_usuario = '$usu'
+		 and senha_usuario = password('$senha')";
+		 //echo $sql;
 			 try {
     			$resultbusca = $conn->query($sql);
         		if ($resultbusca->num_rows > 0) {
