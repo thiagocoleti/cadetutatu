@@ -164,6 +164,7 @@
         <div class="container-fluid">
           <div class="card card-body" style="padding: 20px 70px;">
           	<h4>Lista de Invertebrados Cadastrados</h4>
+            <br>
           <table class="table table-striped">
 			  <thead>
 			    <tr>
@@ -176,17 +177,29 @@
 			    <tr>			      
 			      <td>Mark</td>
 			      <td>Otto</td>
-			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+			      <td>
+              <i class="far fa-edit" title="Alterar"></i>
+              <i class="fas fa-search-plus" title="Ver detalhes"></i>
+              <i class="far fa-trash-alt" title="Excluir"></i>       
+            </td>
 			    </tr>
 			    <tr>			      
 			      <td>Jacob</td>
 			      <td>Thornton</td>
-			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+            <td>
+              <i class="far fa-edit" title="Alterar"></i>
+              <i class="fas fa-search-plus" title="Ver detalhes"></i>
+              <i class="far fa-trash-alt" title="Excluir"></i>
+          </td>
 			    </tr>
 			    <tr>			      
 			      <td>Larry</td>
 			      <td>the Bird</td>
-			      <td>Ícones para Alterar - Detalhes - Excluir</td>
+            <td>
+              <i class="far fa-edit" title="Alterar"></i>
+              <i class="fas fa-search-plus"title="Ver detalhes"></i>
+              <i class="far fa-trash-alt" title="Excluir"></i>
+          </td>
 			    </tr>
 			  </tbody>
 			</table>
