@@ -168,7 +168,7 @@
         <div class="card card-body">
         <h4>Cadastrar invertebrado</h4>
         <hr>
-        <form method="post" action="" id="invertebrado.php">
+        <form method="post" action="invertebrado.php" id="invertebrado.php">
           <input type="hidden" id="acao" name="acao" value="INCLUIR">
           <div class="row">
             <div class="form-group col-md-6">
@@ -218,7 +218,7 @@
           <div class="row">
             <div class="form-group col-md-12">
               <label for="cad-outrasinformacoes">Outras informações</label>
-              <input type="text" class="form-control" id="cad-outrasinformacoes" name="cad-outrasinformacoes"> 
+              <input type="text" class="form-control" id="cad-outrasinformacoes" name="outrasInformacoes"> 
             </div>
           </div>
 

@@ -14,11 +14,12 @@ CREATE TABLE `invertebrados` (
 	`nome_cientifico` varchar(255) NOT NULL,
 	`ordem` varchar(255) NOT NULL,
 	`familia` varchar(255) NOT NULL,
+	`autor` varchar(255) NOT NULL,
 	`habitat` varchar(255) NOT NULL,
 	`alimentacao` varchar(255) NOT NULL,
 	`habitos` varchar(255) NOT NULL,
-	`outras_informacoes` TEXT(500) NOT NULL,
 	`distribuicao_geografica` TEXT(500) NOT NULL,
+	`outras_informacoes` TEXT(500) NOT NULL,
 	PRIMARY KEY (`id_invertebrado`)
 );
 
@@ -42,6 +43,7 @@ CREATE TABLE `vertebrados` (
 	`nome_cientifico` varchar(255) NOT NULL,
 	`ordem` varchar(255) NOT NULL,
 	`familia` varchar(255) NOT NULL,
+	`autor` varchar(255) NOT NULL,
 	`habitat` varchar(255) NOT NULL,
 	`alimentacao` varchar(255) NOT NULL,
 	`habitos` varchar(255) NOT NULL,

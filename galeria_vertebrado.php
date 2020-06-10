@@ -164,24 +164,24 @@
           <div class="card card-body" style="padding: 20px 70px;">
             <h4>Galeria de Vertebrado</h4>
             <hr>
-            <form id="form-cadReferencia" method="post">
+            <form id="form-cadReferencia" method="post" action="vertebrado_image.php" enctype="multipart/form-data">
               <label>Selecione uma Vertebrado</label>
               <div class="form-group">
                 <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, as imagens já cadastradas devem ser exibida em formato de paineis -->
                 <div class="input-group">
                   <div class="input-group">                
-                    <select class="form-control" id="sel1">
-                      <option>Animal 1</option>
-                      <option>Animal 2</option>
-                      <option>Animal 3</option>
-                      <option>Animal 4</option>
+                    <select class="form-control" id="sel1" name="id_ver">
+                      <option> </option>
+                      <?php
+                        require_once("vertebrado_combobox.php");
+                      ?>
                     </select>
                 </div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlFile1">Selecione a imagem</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageUpload">
               </div>
               <hr>
               <div style="float: right">
@@ -191,29 +191,10 @@
 
             <!--painel de imagens já cadastradas -->
             <div class="row">
-              <div class="card" style="width: 25%;">
-              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
-              <div class="card-body">
-                <p class="card-text">Algum texto para imagem</p>
-              </div>
+              <?php
+                require_once("vertebrado_image_galery.php");
+              ?>
             </div>
-
-            <div class="card" style="width: 25%;">
-              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
-              <div class="card-body">
-                <p class="card-text">Algum texto para imagem</p>
-              </div>
-            </div>            
-           
-
-            <div class="card" style="width: 25%;">
-              <img class="card-img-top" src="img/ex_vertebrado.jpg" alt="Exemplo Vertebrado">
-              <div class="card-body">
-                <p class="card-text">Algum texto para imagem</p>
-              </div>
-            </div>           
-            </div>
-          </div>
 
 
         </div>

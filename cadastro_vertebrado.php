@@ -167,7 +167,8 @@
         <div class="card card-body">
         <h4>Cadastrar de Vertebrado</h4>
         <hr>
-        <form method="post" action="" id="form-cadInvertebrado">
+        <form method="post" action="vertebrado.php" id="form-cadInvertebrado">
+          <input type="hidden" id="acao" name="acao" value="INCLUIR">
           <div class="row">
             <div class="form-group col-md-6">
               <label for="cad-nomeVulgar">Nome vulgar</label>
@@ -216,7 +217,7 @@
           <div class="row">
             <div class="form-group col-md-12">
               <label for="cad-outrasinformacoes">Outras informações</label>
-              <input type="text" class="form-control" id="cad-outrasinformacoes" name="cad-outrasinformacoes"> 
+              <input type="text" class="form-control" id="cad-outrasinformacoes" name="outrasInformacoes"> 
             </div>
           </div>
 

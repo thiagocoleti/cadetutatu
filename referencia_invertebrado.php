@@ -164,17 +164,17 @@
           <div class="card card-body" style="padding: 20px 70px;">
             <h4>Cadastrar referência</h4>
             <hr>
-            <form id="form-cadReferencia" method="post">
+            <form id="form-cadReferencia" method="post" action="invertebrado_reference.php">
               <label>Selecione uma invertebrado</label>
               <!-- a busca de alguma informação em "chave estrangeira" deve ser feita pelo componente "select" vulgo Combobox. Ao selecionar um animal, a lista de referências já cadastradas deve ser exibida na GRID abaixo -->
               <div class="form-group">
-                <div class="input-group">                
-                    <select class="form-control" id="sel1">
-                      <option>Animal 1</option>
-                      <option>Animal 2</option>
-                      <option>Animal 3</option>
-                      <option>Animal 4</option>
-                    </select>
+                <div class="input-group"> 
+                  <select class="form-control" id="sel1" name="id_inv"> 
+                    <option> </option>                
+                    <?php
+                      require_once("invertebrado_combobox.php");
+                    ?>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
@@ -198,18 +198,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>                          
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>                          
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>                          
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                        <?php
+                          require_once("invertebrado_reference_list.php");
+                        ?>
                       </tbody>
                     </table>
             </div>
