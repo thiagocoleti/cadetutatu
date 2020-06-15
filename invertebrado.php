@@ -46,6 +46,8 @@
         //echo "<br>";
 
         $stmt->execute();        
+
+        header("Location: lista_invertebrado.php");
     }
 
     function alterar ($idinvertebrado, $nomevulgar, $nomecientifico, $ordem, $familia, $autor, $habitat, $alimentacao, $habitos, $distgeografica, $informacoes){
@@ -87,5 +89,6 @@
 
         $stmt->execute();
 
+        header("Location: lista_invertebrado.php");
     }
 ?>

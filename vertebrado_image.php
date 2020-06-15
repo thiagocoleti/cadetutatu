@@ -32,5 +32,5 @@
         throw new Exception("Não foi possível realizar o upload");   
     }
 
-
+    header("Location: galeria_vertebrado.php");
 ?>

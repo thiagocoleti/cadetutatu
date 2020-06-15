@@ -42,7 +42,9 @@
         var_dump($stmt);
         echo "<br>";
 
-        $stmt->execute();        
+        $stmt->execute();   
+        
+        header("Location: lista_vertebrado.php");
     }
 
     function alterar ($idvertebrado, $nomevulgar, $nomecientifico, $ordem, $familia, $autor, $habitat, $alimentacao, $habitos, $distgeografica, $informacoes){
@@ -76,5 +78,7 @@
         $stmt->bindParam(":id", $idvertebrado);
 
         $stmt->execute();
+
+        header("Location: lista_vertebrado.php");
     }
 ?>

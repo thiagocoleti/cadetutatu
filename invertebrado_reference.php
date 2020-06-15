@@ -10,4 +10,6 @@
     $stmt->bindParam(":id", $id_inv);
 
     $stmt->execute();
+
+    header("Location: referencia_invertebrado.php");
 ?>

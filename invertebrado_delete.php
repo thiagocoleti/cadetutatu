@@ -14,4 +14,6 @@
     $stmt_ref = $conn->prepare("DELETE FROM invertebrados_referencias WHERE id_invertebrado = :id");
     $stmt_ref->bindParam(":id", $id_inv);
     $stmt_ref->execute();
+
+    header("Location: lista_invertebrado.php");
 ?>
