@@ -1,8 +1,8 @@
 <?php
-    define("SERVERNAME", "");
-    define("USERNAME", "");
-    define("PASSWORD", "");
-    define("DBNAME", "");
+    define("SERVERNAME", "localhost");
+    define("USERNAME", "Testes");
+    define("PASSWORD", "root");
+    define("DBNAME", "teste_cadetutatu");
 
     try{
         $conn = new PDO('mysql:host='.SERVERNAME.';dbname='.DBNAME, USERNAME, PASSWORD);
