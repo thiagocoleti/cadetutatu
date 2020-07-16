@@ -8,7 +8,7 @@
 	$_deptousuario = $_POST["deptousuario"];
 
 	$_acao = $_POST["acao"];
-//	echo $_acao;
+	//	echo $_acao;
 
 	if ($_acao == "INCLUIR"){
 
@@ -34,26 +34,24 @@
 	}
 
 
-function verificarLogin($usu, $senha){
-	 include './conexaoMySQL.php';
-	$sql = "select count(*) as qtde from usuarios where email_usuario = '$usu'
-		 and senha_usuario = password('$senha')";
-		 //echo $sql;
-			 try {
-    			$resultbusca = $conn->query($sql);
-        		if ($resultbusca->num_rows > 0) {
-                    $numusus = $resultbusca->fetch_assoc();
-                                     return $numusus["qtde"];
-         		}
-         		else {
-             		return 0;
-         		}
-             } catch (mysqli_sql_exception $ex) {
-                                    $ex->getMessage();
-                                    echo $ex;
-                                    return 0;                                  
-             }
-
-}
-
+	function verificarLogin($usu, $senha){
+	 	include './conexaoMySQL.php';
+		$sql = "select count(*) as qtde from usuarios where email_usuario = '$usu'
+		 	and senha_usuario = password('$senha')";
+		//echo $sql;
+		try {
+    		$resultbusca = $conn->query($sql);
+        	if ($resultbusca->num_rows > 0) {
+                $numusus = $resultbusca->fetch_assoc();
+                return $numusus["qtde"];
+        	}
+        	else {
+           		return 0;
+        	}
+        } catch (mysqli_sql_exception $ex) {
+            $ex->getMessage();
+            echo $ex;
+            return 0;                                  
+        }
+	}
 ?>
