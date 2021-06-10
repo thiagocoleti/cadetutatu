@@ -1,5 +1,5 @@
 <?php
-    require("connection_db_mysql.php");
+    require_once("connection_db_mysql.php");
 
     $stmt = $conn->prepare("SELECT * FROM invertebrados");
 

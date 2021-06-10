@@ -52,20 +52,20 @@ CREATE TABLE `vertebrados` (
 	PRIMARY KEY (`id_vertebrado`)
 );
 
-CREATE TABLE `invertebrados_imagens copy` (
-	`id_invertebrado` int NOT NULL,
-	`fot_inv_caminho` varchar(255) NOT NULL,
+CREATE TABLE `vertebrados_imagens` (
+	`id_vertebrado` int NOT NULL,
+	`fot_ver_caminho` varchar(255) NOT NULL,
 	`fot_ver_id` int NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (`fot_ver_id`)
 );
 
-CREATE TABLE `invertebrados_referencias copy` (
-	`ref_inv_id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vertebrados_referencias` (
+	`ref_ver_id` int NOT NULL AUTO_INCREMENT,
 	`ref_descricao` TEXT(500) NOT NULL,
-	`id_invertebrado` int NOT NULL,
-	PRIMARY KEY (`ref_inv_id`)
+	`id_vertebrado` int NOT NULL,
+	PRIMARY KEY (`ref_ver_id`)
 );
-
+/*
 ALTER TABLE `invertebrados_imagens` ADD CONSTRAINT `invertebrados_imagens_fk0` FOREIGN KEY (`id_invertebrado`) REFERENCES `invertebrados`(`id_invertebrado`);
 
 ALTER TABLE `invertebrados_referencias` ADD CONSTRAINT `invertebrados_referencias_fk0` FOREIGN KEY (`id_invertebrado`) REFERENCES `invertebrados`(`id_invertebrado`);
@@ -73,4 +73,4 @@ ALTER TABLE `invertebrados_referencias` ADD CONSTRAINT `invertebrados_referencia
 ALTER TABLE `invertebrados_imagens copy` ADD CONSTRAINT `invertebrados_imagens copy_fk0` FOREIGN KEY (`id_invertebrado`) REFERENCES `vertebrados`(`id_vertebrado`);
 
 ALTER TABLE `invertebrados_referencias copy` ADD CONSTRAINT `invertebrados_referencias copy_fk0` FOREIGN KEY (`id_invertebrado`) REFERENCES `vertebrados`(`id_vertebrado`);
-
+*/ 

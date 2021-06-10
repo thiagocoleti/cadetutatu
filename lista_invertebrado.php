@@ -175,7 +175,7 @@
 			  </thead>
 			  <tbody>
           <?php
-            require_once("invertebrado_list.php");
+            require("invertebrado_list.php");
           ?>
 			  </tbody>
 			</table>
