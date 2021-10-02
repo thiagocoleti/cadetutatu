@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -17,7 +16,6 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -25,107 +23,12 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
+    
     <!-- Sidebar -->
-       <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center" href="index.html">
-        <div class="sidebar-brand-icon" style="margin-top: 20px;">
-          <img src="./img/logo.png" width=80 height=70>
-        </div>
-      </a>
-
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="home.php">
-          <i class="fas fa-home"></i>
-          <span>Home</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-spider"></i>
-          <span>Invertebrados</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
-            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
-            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
-            <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-horse"></i>
-          <span>Vertebrados</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
-            <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
-            <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_vertebrado.php">Galeria</a>            
-            <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
-          </div>
-        </div>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePlant" aria-expanded="true" aria-controls="collapsePlant">
-          <i class="fas fa-seedling"></i>
-          <span>Plantas</span>
-        </a>
-        <div id="collapsePlant" class="collapse" aria-labelledby="headingPlant" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
-            <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
-            <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a>
-            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
-            <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
-          </div>
-        </div>
-      </li>
-      <!-- Divider 
-      <hr class="sidebar-divider">-->
-
-
-      <!-- Nav Item - Pages Collapse Menu 
-      <li class="nav-item">
-        <a class="nav-link" href="colaboradores.html">
-          <i class="fas fa-users"></i>
-          <span>Colaboradores</span></a>
-      </li>-->
-
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-
-
-
-    <!-- End of Sidebar -->
-
+    <?php
+      require("sidebar.php"); 
+    ?>
+    
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -168,10 +71,10 @@
         <div class="card card-body">
         <h4>Alterar Vertebrado</h4>
         <hr>
-        <form method="post" action="vertebrado.php" id="vertebrado.php">
+        <form method="post" action="php/vertebrado.php" id="form-altVertebrado">
           <input type="hidden" id="acao" name="acao" value="ALTERAR">
             <?php
-                require_once("vertebrado_change.php");
+                require_once("php/vertebrado_change.php");
             ?>
           <hr>
           <div style="float: right">
