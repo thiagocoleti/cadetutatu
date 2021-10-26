@@ -93,13 +93,23 @@
             </div>
           </div>
           <div class="row">
-          <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
               <label for="cad-periodoFloracao">Periodo de Floração</label>
               <input type="text" class="form-control" id="cad-periodoFloracao" name="periodoFloracao"> 
             </div> 
             <div class="form-group col-md-6"> 
                 <label for="cad-periodoFrutificacao">Periodo de Frutificação</label>
                 <input type="text" class="form-control" id="cad-periodoFrutificacao" name="periodoFrutificacao"> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="cad-latitude">Latitude</label>
+              <input type="text" class="form-control" id="cad-latitude" name="latitude"> 
+            </div> 
+            <div class="form-group col-md-6"> 
+                <label for="cad-longitude">Longitude</label>
+                <input type="text" class="form-control" id="cad-longitude" name="longitude"> 
             </div>
           </div>
           <div class="row">

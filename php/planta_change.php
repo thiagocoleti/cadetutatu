@@ -42,6 +42,16 @@
         echo '</div>';
     echo '</div>';
     echo '<div class="row">';
+        echo '<div class="form-group col-md-6">';
+            echo '<label for="cad-latitude">Latitude</label>';
+            echo '<input type="text" class="form-control" id="cad-latitude" name="latitude" value="'.$result[0]["latitude"].'">';
+        echo '</div>';
+        echo '<div class="form-group col-md-6">';
+            echo '<label for="cad-longitude">Longitude</label>';
+            echo '<input type="text" class="form-control" id="cad-longitude" name="longitude" value="'.$result[0]["longitude"].'">'; 
+        echo '</div>';
+    echo '</div>';
+    echo '<div class="row">';
         echo '<div class="form-group col-md-12">';
             echo '<label for="cad-distribuicaoGeografica">Distribuição geográfica</label>';
             echo '<input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica" value="'.$result[0]["distribuicao_geografica"].'">';

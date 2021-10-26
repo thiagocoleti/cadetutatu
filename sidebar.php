@@ -66,8 +66,6 @@
             <a class="collapse-item" href="cadastro_planta.php">Cadastrar</a>            
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
             <a class="collapse-item" href="galeria_planta.php">Galeria</a>            
-            <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
         </div>
       </li>
