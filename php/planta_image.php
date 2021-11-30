@@ -9,7 +9,7 @@
     }
 
     $stmt = $conn->prepare("
-        SELECT * FROM plantas WHERE id_plantas = :id
+        SELECT * FROM plantas WHERE id_planta = :id
     ");
     $stmt->bindParam(":id", $id_plan);
     $stmt->execute();
@@ -24,7 +24,7 @@
         $stmt = $conn->prepare("
             INSERT INTO plantas_imagens (
                 id_planta, 
-                fot_plan_caminho
+                fot_pla_caminho
             ) 
             VALUES(:id, :cam)
         ");
@@ -37,5 +37,5 @@
         echo "Não foi possível realizar o upload";
     }
 
-    header("Location:../planta_vertebrado.php");
+    header("Location:../galeria_planta.php");
 ?>

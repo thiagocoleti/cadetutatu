@@ -42,11 +42,11 @@
     echo '<div class="row">';
         echo '<div class="form-group col-md-6">';
             echo '<label for="cad-latitude">Latitude</label>';
-            echo '<input type="text" class="form-control" id="cad-latitude" name="latitude" value="'.$result[0]["latitude"].'" disabled>';
+            echo '<input type="number" step="any" class="form-control" id="cad-latitude" name="latitude" value="'.$result[0]["latitude"].'" disabled>';
         echo '</div>';
         echo '<div class="form-group col-md-6">';
             echo '<label for="cad-longitude">Longitude</label>';
-            echo '<input type="text" class="form-control" id="cad-longitude" name="longitude" value="'.$result[0]["longitude"].'"disabled>'; 
+            echo '<input type="number" step="any" class="form-control" id="cad-longitude" name="longitude" value="'.$result[0]["longitude"].'"disabled>'; 
         echo '</div>';
     echo '</div>';
     echo '<div class="row">';

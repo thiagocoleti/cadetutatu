@@ -5,10 +5,11 @@
     $_autor = $_POST["autor"];
     $_periodoFloracao = $_POST["periodoFloracao"];
     $_periodoFrutificacao = $_POST["periodoFrutificacao"];
-    $_latitude = $_POST["latitude"];
-    $_longitude = $_POST["longitude"]; 
     $_distribuicaoGeografica = $_POST["distribuicaoGeografica"];
     $_informacoes = $_POST["outrasInformacoes"];
+
+    $_latitude = doubleval($_POST["latitude"]);
+    $_longitude = doubleval($_POST["longitude"]); 
 
     $_acao = $_POST["acao"]; 
 

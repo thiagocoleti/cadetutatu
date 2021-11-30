@@ -49,7 +49,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              </a>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              
+              </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -67,71 +68,74 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-        <div class="card card-body">
-        <h4>Cadastro de Planta</h4>
-        <hr>
-        <form method="post" action="php/planta.php" id="form-cadPlanta">
-          <input type="hidden" id="acao" name="acao" value="INCLUIR">
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="cad-nomeVulgar">Nome vulgar</label>
-              <input type="text" class="form-control" id="cad-nomeVulgar" name="nomeVulgar"> 
-            </div>
-            <div class="form-group col-md-6">
-              <label for="cad-nomeCientifico">Nome científico</label>
-              <input type="text" class="form-control" id="cad-nomeCientifico" name="nomeCientifico"> 
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="cad-familia">Familia</label>
-              <input type="text" class="form-control" id="cad-familia" name="familia"> 
-            </div>
-            <div class="form-group col-md-6">
-              <label for="cad-autor">Autor</label>
-              <input type="text" class="form-control" id="cad-autor" name="autor"> 
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="cad-periodoFloracao">Periodo de Floração</label>
-              <input type="text" class="form-control" id="cad-periodoFloracao" name="periodoFloracao"> 
-            </div> 
-            <div class="form-group col-md-6"> 
-                <label for="cad-periodoFrutificacao">Periodo de Frutificação</label>
-                <input type="text" class="form-control" id="cad-periodoFrutificacao" name="periodoFrutificacao"> 
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6">
-              <label for="cad-latitude">Latitude</label>
-              <input type="text" class="form-control" id="cad-latitude" name="latitude"> 
-            </div> 
-            <div class="form-group col-md-6"> 
-                <label for="cad-longitude">Longitude</label>
-                <input type="text" class="form-control" id="cad-longitude" name="longitude"> 
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-12">
-              <label for="cad-distribuicaoGeografica">Distribuição geográfica</label>
-              <input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica"> 
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-12">
-              <label for="cad-outrasinformacoes">Outras informações</label>
-              <input type="text" class="form-control" id="cad-outrasinformacoes" name="outrasInformacoes"> 
-            </div>
-          </div>
+          
+          <div class="card card-body">
+          
+            <h4>Cadastro de Planta</h4>
+            <hr>
 
-          <hr>
-          <div style="float: right">
-            <button id="btn-cadInvertebrado" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
-          </div>
-        </form>
-      </div>
+            <form method="post" action="php/planta.php" id="form-cadPlanta">
+              <input type="hidden" id="acao" name="acao" value="INCLUIR">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="cad-nomeVulgar">Nome vulgar</label>
+                  <input type="text" class="form-control" id="cad-nomeVulgar" name="nomeVulgar"> 
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cad-nomeCientifico">Nome científico</label>
+                  <input type="text" class="form-control" id="cad-nomeCientifico" name="nomeCientifico"> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="cad-familia">Familia</label>
+                  <input type="text" class="form-control" id="cad-familia" name="familia"> 
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cad-autor">Autor</label>
+                  <input type="text" class="form-control" id="cad-autor" name="autor"> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="cad-periodoFloracao">Periodo de Floração</label>
+                  <input type="text" class="form-control" id="cad-periodoFloracao" name="periodoFloracao"> 
+                </div> 
+                <div class="form-group col-md-6"> 
+                  <label for="cad-periodoFrutificacao">Periodo de Frutificação</label>
+                  <input type="text" class="form-control" id="cad-periodoFrutificacao" name="periodoFrutificacao"> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="cad-latitude">Latitude</label>
+                  <input type="number" step="any" class="form-control" id="cad-latitude" name="latitude"> 
+                </div> 
+                <div class="form-group col-md-6"> 
+                  <label for="cad-longitude">Longitude</label>
+                  <input type="number" step="any" class="form-control" id="cad-longitude" name="longitude"> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="cad-distribuicaoGeografica">Distribuição geográfica</label>
+                  <input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica"> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="cad-outrasinformacoes">Outras informações</label>
+                  <input type="text" class="form-control" id="cad-outrasinformacoes" name="outrasInformacoes"> 
+                </div>
+              </div>
 
+              <hr>
+              
+              <div style="float: right">
+                <button id="btn-cadInvertebrado" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
+              </div>
+            </form>
+          </div>
 
         </div>
         <!-- /.container-fluid -->
