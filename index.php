@@ -1,3 +1,10 @@
+<?php
+session_start();
+  
+  $_SESSION["usuario"] = "";  
+  $_SESSION["nomeusuario"] = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Projeto CadeTuTatu - Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,13 +47,13 @@
                     <h1 class="h4 text-gray-900 mb-4"><img src="./img/logo.png" width=180 height=150></h1>
                   </div>
 
-                  <form class="user" action="usuarios.php" method="POST" style="padding: 0px 20px">
+                  <form class="user" action="php/usuarios.php" method="POST" style="padding: 0px 20px">
                     <input type="hidden" name="acao" value="LOGIN">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="emailusuario" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="emailusuario" aria-describedby="emailHelp" name="emailusuario" " placeholder="Informe o e-mail de cadastro...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="senhausuario">
+                      <input type="password" class="form-control form-control-user" id="senhausuario" placeholder="Informe a senha" name="senhausuario">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -57,9 +64,9 @@
 
                     <div class="center">
 
-                    <!-- <button type="submit" class="btn botao btn-user btn-block form-group">Acessar</button>--> 
-                    <a href="home.php" class="btn botao btn-user btn-block form-group">Acessar</a>
-
+                    <button type="submit" class="btn botao btn-user btn-block form-group">Acessar</button>
+                    <!--<a href="home.php" class="btn botao btn-user btn-block form-group">Acessar</a> -->
+                  
                   </div>
 
                   <hr>
