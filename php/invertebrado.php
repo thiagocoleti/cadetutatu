@@ -28,22 +28,21 @@
                 nome_vulgar, 
                 nome_cientifico, 
                 ordem, 
-                familia, 
-                autor, 
+                familia,                 
                 habitat, 
                 alimentacao, 
                 habitos, 
                 distribuicao_geografica, 
                 outras_informacoes
             )     
-            VALUES(:nv, :nc, :ord, :fam, :aut, :hbta, :ali, :hbto, :dg, :oi)
+            VALUES(:nv, :nc, :ord, :fam, :hbta, :ali, :hbto, :dg, :oi)
         ");
 
         $stmt->bindParam(":nv", $nomeVulgar);
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":ord", $ordem);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+     //   $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":hbta", $habitat);
         $stmt->bindParam(":ali", $alimentacao);
         $stmt->bindParam(":hbto", $habitos);
@@ -64,8 +63,7 @@
                 nome_vulgar = :nv,
                 nome_cientifico = :nc,
                 ordem = :ord,
-                familia = :fam,
-                autor = :aut,
+                familia = :fam,               
                 habitat = :hbta,
                 alimentacao = :ali,
                 habitos = :hbto,
@@ -78,7 +76,7 @@
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":ord", $ordem);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+      //  $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":hbta", $habitat);
         $stmt->bindParam(":ali", $alimentacao);
         $stmt->bindParam(":hbto", $habitos);
@@ -88,6 +86,15 @@
         $stmt->bindParam(":id", $idInvertebrado);
 
         $stmt->execute();
+
+
+    /*if (mysqli_query($conn, $sql)) {
+       echo "Registro inserido com sucesso";
+       return;
+      //  include "messageforuser.php";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }*/
 
         header("Location: ../lista_invertebrado.php");
     }
