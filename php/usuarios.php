@@ -26,8 +26,9 @@
 		 if ($qtdeUsu == 1){
 		 	        
 	        $_SESSION["usuario"] = $_emailusuario;	
-	        $_SESSION["nomeusuario"] = carregaSessao($_emailusuario);
-	        
+	        $usuariologado = carregaSessao($_emailusuario);
+	        $_SESSION["nomeusuario"] = $usuariologado[0];
+	        $_SESSION["tipo"] = $usuariologado[1];
 
 	        //echo $_SESSION["usuario"]. "<br>";
 	        //echo $_SESSION["nomeusuario"]. "<br>";
@@ -42,12 +43,13 @@
 
 	function carregaSessao($usu){
 		include 'connection_db_mysql.php';
-		$sql2 = "select nome_usuario from usuarios where email_usuario = '$usu'";
+		$sql2 = "select nome_usuario, tipo_usuario from usuarios where email_usuario = '$usu'";
 		 	try {
     		$resultbusca = $conn->query($sql2);
         	if ($resultbusca->rowCount() > 0) {
                 $nome_usu = $resultbusca->fetch(PDO::FETCH_ASSOC);
-                $usuariologado = $nome_usu["nome_usuario"];
+                $usuariologado = array($nome_usu["nome_usuario"],  $nome_usu["tipo_usuario"] );
+              
                return $usuariologado;
         	}
         	else {
