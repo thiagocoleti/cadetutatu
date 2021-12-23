@@ -61,8 +61,16 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php
+                  $perfil = "";
+                  if ($_SESSION["tipo"] == "A"){
+                    $perfil = "Administrador";
+                  }
+                  else if ($_SESSION["tipo"] == "P"){
+                    $perfil = "PESQUISADOR";
 
-                  print( $_SESSION["nomeusuario"]);
+                  }
+
+                  print( $_SESSION["nomeusuario"]." - (".$perfil.")");
                 ?>
 
                             </a>

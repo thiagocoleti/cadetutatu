@@ -1,3 +1,5 @@
+
+
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -69,18 +71,25 @@
           </div>
         </div>
       </li>
-      
-      <!-- Divider 
-      <hr class="sidebar-divider">-->
 
-
-      <!-- Nav Item - Pages Collapse Menu 
-      <li class="nav-item">
-        <a class="nav-link" href="colaboradores.html">
-          <i class="fas fa-users"></i>
-          <span>Colaboradores</span></a>
-      </li>-->
-
+      <?php
+     if ($_SESSION["tipo"] == "A"){
+      ?>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
+            <i class="fas fa-users"></i>
+            <span>Usuários</span></a>
+             <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="#">Listar</a>
+                <a class="collapse-item" href="#">Cadastrar</a>            
+                <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
+                          
+            </div>
+        </li>
+      <?php
+          }
+      ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
