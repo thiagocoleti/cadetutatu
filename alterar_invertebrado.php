@@ -1,3 +1,12 @@
+<?php
+ session_start();
+
+ if ( $_SESSION["usuario"] == "") {
+   header("Location:/cadetutatu/php/limpasession.php");
+ }
+
+ ?>
+
 <html>
 
 <head>
@@ -49,8 +58,20 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>                
-              </a>
+                <?php
+                  $perfil = "";
+                  if ($_SESSION["tipo"] == "A"){
+                    $perfil = "Administrador";
+                  }
+                  else if ($_SESSION["tipo"] == "P"){
+                    $perfil = "PESQUISADOR";
+
+                  }
+
+                  print( $_SESSION["nomeusuario"]." - (".$perfil.")");
+                ?>
+
+                            </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -78,7 +99,7 @@
               ?>
               <hr>
               <div style="float: right">
-                <button id="btn-cadInvertebrado" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
+                <button id="btn-cadInvertebrado" class="btn botao btn-primary btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Salvar</button>
               </div>
             </form>
           </div>
@@ -92,7 +113,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Projeto UENP</span>
+            <span>CadeTuTatu</span>
           </div>
         </div>
       </footer>
@@ -109,7 +130,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -118,11 +139,10 @@
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
-        </div>
-        <div class="modal-body">Selecione sair para deslogar.</div>
+        </div>        
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Sair</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
+          <a href="index.php" class="btn btn-primary">Sim</a>
         </div>
       </div>
     </div>
