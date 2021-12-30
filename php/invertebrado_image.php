@@ -37,5 +37,5 @@
         echo "Não foi possível realizar o upload";   
     }
 
-    header("Location: ../galeria_invertebrado.php");
+    header("Location: ../galeria_invertebrado.php?id_inv=". $id_inv ) ;
 ?>

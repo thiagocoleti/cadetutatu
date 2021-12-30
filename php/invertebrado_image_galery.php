@@ -1,26 +1,59 @@
+
 <?php
     require_once("connection_db_mysql.php");
 
-    $stmt = $conn->prepare("SELECT * FROM invertebrados_imagens");
+    if (isset($_POST["id_inv"])){
+        $id = $_POST["id_inv"];
+    }
+    else{
+        $id = -1;
+    }
+
+   
+   
+        $sql = "SELECT invertebrados_imagens.fot_inv_caminho, invertebrados.nome_cientifico, invertebrados.nome_vulgar
+                FROM invertebrados_imagens, invertebrados where invertebrados_imagens.id_invertebrado = :id
+                and invertebrados.id_invertebrado = invertebrados_imagens.id_invertebrado";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":id", $id);
+    
+
+    //echo $stmt;
 
     $stmt->execute();
     
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if (count($result) > 0){
     
-    for($i = 0; $i < count($result); $i++){
-        $id_inv = $result[$i]["id_invertebrado"];
+        echo "<div class='container'>";
+        echo "<div class='row'>";
+       
+        for($i = 0; $i < count($result); $i++){     
+            
+                echo '<div class="card col-sm-12 col-md-12 col-lg-6 col-xl-6  ">';                
+                   echo '<div class="card-body">';
 
-        $stmt2 = $conn->prepare("SELECT * FROM invertebrados WHERE id_invertebrado = :id");
-        $stmt2->bindParam(":id", $id_inv);
-        $stmt2->execute();
 
-        $result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                        echo '<p class="card-text"><b>Nome:  </b>'.$result[$i]["nome_vulgar"].'<br>'. '<b> Nome Científico: </b> '.$result[$i]["nome_cientifico"].'</p> <br>'; 
 
-        echo '<div class="card" style="width: 25%;">';
-        echo '<img class="card-img-top" src="'.$result[$i]["fot_inv_caminho"].'" alt="Invertebrado">';
-            echo '<div class="card-body">';
-                echo '<p class="card-text">Nome: '.$result2[0]["nome_vulgar"].'<br>'. 'Nome Científico: '.$result2[0]["nome_cientifico"].'</p>';
-            echo '</div>';
-        echo '</div>';
+                        echo '<img  style="width: 100%" class="card-img-top" src="'.$result[$i]["fot_inv_caminho"].'" alt="Invertebrado">';
+
+                   echo '</div>';
+                echo '</div>';            
+          
+        }
+        echo "</div>";  //fecha div da ROW
+        echo "</div>";  // fecha div da container
     }
+    else {
+        echo "<div class='container text-center'>";
+        echo '<p> Não há imagens registradas para esse invertebrado!!! </p>'; 
+        echo '</div>';
+    }        
 ?>
+
+</body>
+
+</html>
