@@ -103,7 +103,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Projeto UENP</span>
+            <span>CadeTuTatu</span>
           </div>
         </div>
       </footer>
@@ -132,7 +132,7 @@
         </div>        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
-          <a href="index.php" class="btn btn-primary" href="index.">Sim</a>
+          <a href="index.php" class="btn btn-primary">Sim</a>
         </div>
       </div>
     </div>

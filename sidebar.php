@@ -31,7 +31,7 @@
             <a class="collapse-item" href="lista_invertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_invertebrado.php">Cadastrar</a>            
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
-            <a class="collapse-item" href="galeria_invertebrado.php">Galeria</a>            
+            <a class="collapse-item" href="lista_invertebrado_galeria.php">Galeria</a>            
             <hr class="sidebar-divider">
             <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>
@@ -81,7 +81,7 @@
             <span>Usuários</span></a>
              <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Listar</a>
+                <a class="collapse-item" href="lista_usuarios.php">Listar</a>
                 <a class="collapse-item" href="#">Cadastrar</a>            
                 <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
                           

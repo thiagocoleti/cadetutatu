@@ -5,14 +5,10 @@
    header("Location:/cadetutatu/php/limpasession.php");
  }
 
-$id_inv = $_GET["id_inv"];
-
-
-
-
  ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -30,6 +26,7 @@ $id_inv = $_GET["id_inv"];
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -37,12 +34,12 @@ $id_inv = $_GET["id_inv"];
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-    
+
     <!-- Sidebar -->
     <?php
-      require("sidebar.php"); 
+      require("sidebar.php");
     ?>
-
+  
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -57,7 +54,6 @@ $id_inv = $_GET["id_inv"];
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - User Information -->
@@ -88,50 +84,32 @@ $id_inv = $_GET["id_inv"];
             </li>
 
           </ul>
-
         </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div class="card card-body" style="padding: 20px 70px;">
-            <h4>Galeria de Invertebrado</h4>
-            <?php            
-              $_POST["id_inv"] =  $id_inv;         
-              include "php/invertebrado_get.php";
-            ?>
-            
-            <hr>
-            <form id="form-cadReferencia" method="post" action="php/invertebrado_image.php" enctype="multipart/form-data">
-            <input type='hidden' id='id_inv' name='id_inv' value='<?php print $id_inv ?>'>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Para inserir uma nova imagem, selecione a mesma e clique no botão ENVIAR IMAGEM</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageUpload">
-              </div>               
-
-              <div style="float: right">
-                <button id="btn-cadReferencia" class="btn botao btn-primary btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Aguarde..." type="submit"style="box-shadow: none !important;">Enviar Imagem</button>
-              </div>
-              <br>
-              <br>
-              <div class="text-center">
-              <a href="lista_invertebrado_galeria.php"><i class="far fa-backward" title="Voltar"></i>Voltar para listagem de invertebrados</a>
-            </div>
-              <hr>
-              
-            </form>
-            
-            <!--painel de imagens já cadastradas -->
-            <div class="row">
-              <?php
-               // require_once("php/invertebrado_image_galery.php");             
-              include "php/invertebrado_image_galery.php";
-                      
-              ?>
-            </div>
+            <h4>Lista de Usuários Cadastrados</h4>
+            <br>
+            <table class="table table-striped">
+	            <thead>
+	              <tr>
+	                <th scope="col">Nome </th>
+	                <th scope="col">E-mail</th>
+	                <th scope="col">Função</th>	
+                  <th scope="col">Departamento</th> 		      
+	              </tr>
+	            </thead>
+	            <tbody>
+                <?php
+                //  require_once("php/planta_list.php");
+                ?>
+	            </tbody>
+	          </table>
           </div>
         </div>
-        <!-- End Page Content -->
+        <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
@@ -140,7 +118,7 @@ $id_inv = $_GET["id_inv"];
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>CadeTuTatu</span>
+            <span>Projeto UENP</span>
           </div>
         </div>
       </footer>
@@ -157,7 +135,6 @@ $id_inv = $_GET["id_inv"];
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -169,14 +146,12 @@ $id_inv = $_GET["id_inv"];
         </div>        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
-          <a href="index.php" class="btn btn-primary">Sim</a>
+          <a href="index.php" class="btn btn-primary" href="index.">Sim</a>
         </div>
       </div>
     </div>
   </div>
 
-
- 
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
