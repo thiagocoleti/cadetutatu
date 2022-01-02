@@ -11,7 +11,7 @@
 
    
    
-        $sql = "SELECT invertebrados_imagens.fot_inv_caminho, invertebrados.nome_cientifico, invertebrados.nome_vulgar
+        $sql = "SELECT invertebrados_imagens.fot_inv_id, invertebrados_imagens.fot_inv_caminho, invertebrados.nome_cientifico, invertebrados.nome_vulgar
                 FROM invertebrados_imagens, invertebrados where invertebrados_imagens.id_invertebrado = :id
                 and invertebrados.id_invertebrado = invertebrados_imagens.id_invertebrado";
 
@@ -36,9 +36,15 @@
                    echo '<div class="card-body">';
 
 
-                        echo '<p class="card-text"><b>Nome:  </b>'.$result[$i]["nome_vulgar"].'<br>'. '<b> Nome Científico: </b> '.$result[$i]["nome_cientifico"].'</p> <br>'; 
+                        echo '<p class="card-text"><b>Nome:  </b>'.$result[$i]["nome_vulgar"].'<br>'. '<b> Nome Científico: </b> '.$result[$i]["nome_cientifico"].'</p> '; 
+
+                         if ($_SESSION["tipo"] == "A"){
+                            echo 'Excluir imagem: <a href="php/invertebrado_image_delete.php?id_foto='.$result[$i]["fot_inv_id"].'"><i class="far fa-trash-alt" title="Excluir"></i></a>';   
+                         }
 
                         echo '<img  style="width: 100%" class="card-img-top" src="'.$result[$i]["fot_inv_caminho"].'" alt="Invertebrado">';
+
+
 
                    echo '</div>';
                 echo '</div>';            
@@ -54,6 +60,3 @@
     }        
 ?>
 
-</body>
-
-</html>
