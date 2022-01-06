@@ -32,7 +32,7 @@
        
         for($i = 0; $i < count($result); $i++){     
             
-                echo '<div class="card col-sm-12 col-md-12 col-lg-6 col-xl-6  ">';                
+                echo '<div class="card col-sm-12 col-md-12 col-lg-4 col-xl-4  ">';                
                    echo '<div class="card-body">';
 
 
@@ -42,7 +42,7 @@
                             echo 'Excluir imagem: <a href="php/invertebrado_image_delete.php?id_foto='.$result[$i]["fot_inv_id"].'"><i class="far fa-trash-alt" title="Excluir"></i></a>';   
                          }
 
-                        echo '<img  style="width: 100%" class="card-img-top" src="'.$result[$i]["fot_inv_caminho"].'" alt="Invertebrado">';
+                        echo '<img  style="width: 70%" class="card-img-top" src="'.$result[$i]["fot_inv_caminho"].'" alt="Invertebrado">';
 
 
 
