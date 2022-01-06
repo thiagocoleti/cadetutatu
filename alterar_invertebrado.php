@@ -99,7 +99,13 @@
               ?>
               <hr>
               <div style="float: right">
+                
                 <button id="btn-cadInvertebrado" class="btn botao btn-primary btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Salvar</button>
+
+                <a href="lista_invertebrado.php" id="btn-cancelcadInvertebrado" class="btn botao btn-danger btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." style="box-shadow: none !important;"> Cancelar
+                </a>
+
+             
               </div>
             </form>
           </div>

@@ -5,6 +5,7 @@
    header("Location:/cadetutatu/php/limpasession.php");
  }
 
+
  ?>
 
 <html>
@@ -98,7 +99,9 @@
           ?>
            <hr>
               <div style="float: right">
-                <a href="lista_invertebrado.php" class="btn btn-secondary">Voltar</a>
+              
+              <a href="javascript: history.go(-1)" class="btn btn-secondary">Voltar</a>
+              
               </div>
         </form>
       </div>
