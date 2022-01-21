@@ -3,7 +3,7 @@
     $_nomeCientifico = $_POST["nomeCientifico"];
     $_ordem = $_POST["ordem"];
     $_familia = $_POST["familia"];
-    $_autor = $_POST["autor"];
+   // $_autor = $_POST["autor"];
     $_habitat = $_POST["habitat"];
     $_alimentacao = $_POST["alimentacao"];
     $_habitos = $_POST["habitos"];

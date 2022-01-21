@@ -3,7 +3,7 @@
     $_nomeCientifico = $_POST["nomeCientifico"];
     $_ordem = $_POST["ordem"];
     $_familia = $_POST["familia"];
-    $_autor = $_POST["autor"];
+    $_autor = "";
     $_habitat = $_POST["habitat"];
     $_alimentacao = $_POST["alimentacao"];
     $_habitos = $_POST["habitos"];
@@ -28,22 +28,21 @@
                 nome_vulgar, 
                 nome_cientifico, 
                 ordem, 
-                familia, 
-                autor, 
+                familia,                
                 habitat, 
                 alimentacao, 
                 habitos, 
                 distribuicao_geografica, 
                 outras_informacoes
             )     
-            VALUES(:nv, :nc, :ord, :fam, :aut, :hbta, :ali, :hbto, :dg, :oi)
+            VALUES(:nv, :nc, :ord, :fam, :hbta, :ali, :hbto, :dg, :oi)
         ");
 
         $stmt->bindParam(":nv", $nomeVulgar);
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":ord", $ordem);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+       // $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":hbta", $habitat);
         $stmt->bindParam(":ali", $alimentacao);
         $stmt->bindParam(":hbto", $habitos);
@@ -58,14 +57,14 @@
     function alterar($idVertebrado, $nomeVulgar, $nomeCientifico, $ordem, $familia, $autor, $habitat, $alimentacao, $habitos, $distGeografica, $informacoes){
         require("connection_db_mysql.php");
 
+        try{
         $stmt = $conn->prepare("
             UPDATE vertebrados
             SET 
                 nome_vulgar = :nv,
                 nome_cientifico = :nc,
                 ordem = :ord,
-                familia = :fam,
-                autor = :aut,
+                familia = :fam,               
                 habitat = :hbta,
                 alimentacao = :ali,
                 habitos = :hbto,
@@ -78,16 +77,25 @@
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":ord", $ordem);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+      //  $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":hbta", $habitat);
         $stmt->bindParam(":ali", $alimentacao);
         $stmt->bindParam(":hbto", $habitos);
         $stmt->bindParam(":dg", $distGeografica);
         $stmt->bindParam(":oi", $informacoes);
 
-        $stmt->bindParam(":id", $idvertebrado);
+        $stmt->bindParam(":id", $idVertebrado);
+
+
+        //echo $idVertebrado;
 
         $stmt->execute();
+
+        
+        //echo  '<br> Message: Deu certo!!';
+    }catch(Execption $ex){
+         echo 'Message: ' .$e->getMessage();
+    }
 
         header("Location: ../lista_vertebrado.php");
     }

@@ -18,11 +18,11 @@
 
     $imageFileName = "ver" . $id_ver . "-" . $vertebrado[0]["nome_vulgar"] . "-" . date("dmyhis") . ".jpeg";
 
-    $cam_image = "img-registred/vertebrados" . DIRECTORY_SEPARATOR. $imageFileName;
+    $cam_image = "img-registred".DIRECTORY_SEPARATOR."vertebrados" . DIRECTORY_SEPARATOR. $imageFileName;
 
     if (move_uploaded_file($image["tmp_name"], "../".$cam_image)){
         $stmt = $conn->prepare("
-            INSERT INTO vertebrados_imagens (
+            INSERT INTO vertebrados_imagem (
                 id_vertebrado, 
                 fot_ver_caminho
             ) 
@@ -37,5 +37,5 @@
         echo "Não foi possível realizar o upload";
     }
 
-    header("Location:../galeria_vertebrado.php");
+    header("Location: ../galeria_vertebrado.php?id_ver=".$id_ver ) ;
 ?>

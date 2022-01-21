@@ -18,7 +18,7 @@
 
     $imageFileName = "inv" . $id_inv . "-" . $invertebrado[0]["nome_vulgar"] . "-" . date("dmyhis") . ".jpeg";
 
-    $cam_image = "img-registred\invertebrados" . DIRECTORY_SEPARATOR . $imageFileName;
+    $cam_image = "img-registred".DIRECTORY_SEPARATOR."invertebrados" . DIRECTORY_SEPARATOR . $imageFileName;
 
     if (move_uploaded_file($image["tmp_name"], "../".$cam_image)){
         $stmt = $conn->prepare("

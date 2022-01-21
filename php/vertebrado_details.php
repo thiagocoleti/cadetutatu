@@ -20,18 +20,18 @@
         echo '</div>';
     echo '</div>';
     echo '<div class="row">';
-        echo '<div class="form-group col-md-4">';
+        echo '<div class="form-group col-md-6">';
             echo '<label for="cad-ordem">Ordem</label>';
             echo '<input type="text" class="form-control" id="cad-ordem" name="ordem" value="'.$result[0]["ordem"].'" disabled>';
         echo '</div>';
-        echo '<div class="form-group col-md-4">';
+        echo '<div class="form-group col-md-6">';
             echo '<label for="cad-familia">Familia</label>';
             echo '<input type="text" class="form-control" id="cad-familia" name="familia" value="'.$result[0]["familia"].'" disabled>';
         echo '</div>';
-        echo '<div class="form-group col-md-4">';
+        /*echo '<div class="form-group col-md-4">';
             echo '<label for="cad-autor">Autor</label>';
             echo '<input type="text" class="form-control" id="cad-autor" name="autor" value="'.$result[0]["autor"].'" disabled>'; 
-        echo '</div>';
+        echo '</div>'; */
     echo '</div>';
     echo '<div class="row">';
         echo '<div class="form-group col-md-4">';
