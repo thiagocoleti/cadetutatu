@@ -49,7 +49,7 @@
             <a class="collapse-item" href="lista_vertebrado.php">Listar</a>
             <a class="collapse-item" href="cadastro_vertebrado.php">Cadastrar</a>            
             <!-- <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a> -->
-            <a class="collapse-item" href="galeria_vertebrado.php">Galeria</a>            
+            <a class="collapse-item" href="lista_vertebrado_galeria.php">Galeria</a>            
             <hr class="sidebar-divider">
             <a class="collapse-item" href="#">Ocorrências</a>                        
           </div>

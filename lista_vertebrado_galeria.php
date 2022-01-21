@@ -5,13 +5,10 @@
    header("Location:/cadetutatu/php/limpasession.php");
  }
 
-$id_ver = $_GET["id_ver"];
-
-
-
-
  ?>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -29,6 +26,7 @@ $id_ver = $_GET["id_ver"];
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -39,7 +37,7 @@ $id_ver = $_GET["id_ver"];
 
     <!-- Sidebar -->
     <?php
-      require("sidebar.php"); 
+      require("sidebar.php");
     ?>
 
     <!-- Content Wrapper -->
@@ -57,7 +55,7 @@ $id_ver = $_GET["id_ver"];
           </button>
 
           <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
+       <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -92,45 +90,29 @@ $id_ver = $_GET["id_ver"];
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-         <div class="container-fluid">
+        <div class="container-fluid">
           <div class="card card-body" style="padding: 20px 70px;">
-            <h4>Galeria de Vertebrado</h4>
-            <?php            
-              $_POST["id_ver"] =  $id_ver;         
-              include "php/vertebrado_get.php";
-            ?>
-            
-            <hr>
-            <form id="form-cadReferencia" method="post" action="php/vertebrado_image.php" enctype="multipart/form-data">
-            <input type='hidden' id='id_ver' name='id_ver' value='<?php print $id_ver ?>'>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Para inserir uma nova imagem, selecione a mesma e clique no botão ENVIAR IMAGEM</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imageUpload">
-              </div>               
-
-              <div style="float: right">
-                <button id="btn-cadReferencia" class="btn botao btn-primary btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Aguarde..." type="submit"style="box-shadow: none !important;">Enviar Imagem</button>
-              </div>
-              <br>
-              <br>
-              <div class="text-center">
-              <a href="lista_vertebrado_galeria.php"><i class="far fa-backward" title="Voltar"></i>Voltar para listagem de vertebrados</a>
-            </div>
-              <hr>
-              
-            </form>
-            
-            <!--painel de imagens já cadastradas -->
-            <div class="row">
-              <?php
-               // require_once("php/invertebrado_image_galery.php");             
-              include "php/vertebrado_image_galery.php";
-                      
-              ?>
-            </div>
+          	<h4>Galerias de Vertebrados Cadastrados</h4>
+            <br>
+          <table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nome Vulgar</th>
+			      <th scope="col">Nome Científico</th>
+			      <th scope="col" style="text-align:center">Ver Galeria</th>			                            
+			    </tr>
+			  </thead>
+			  <tbody>
+          <?php
+            require_once("php/vertebrado_list_galeria.php");
+          ?>
+			  </tbody>
+			</table>
           </div>
+
+
         </div>
-        <!-- End Page Content -->
+        <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
@@ -139,7 +121,7 @@ $id_ver = $_GET["id_ver"];
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Projeto UENP</span>
+            <span>CadeTuTatu</span>
           </div>
         </div>
       </footer>
@@ -165,11 +147,10 @@ $id_ver = $_GET["id_ver"];
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
-        </div>
-        <div class="modal-body">Selecione sair para deslogar.</div>
+        </div>        
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
+          <a href="index.php" class="btn btn-primary">Sim</a>
         </div>
       </div>
     </div>
