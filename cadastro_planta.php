@@ -1,3 +1,14 @@
+
+<?php
+ session_start();
+
+ if ( $_SESSION["usuario"] == "") {
+   header("Location:/cadetutatu/php/limpasession.php");
+ }
+
+
+ ?>
+
 <html>
 
 <head>
@@ -44,13 +55,25 @@
           </button>
 
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário: Valerie Luna</span>              
-              </a>
+                <?php
+                  $perfil = "";
+                  if ($_SESSION["tipo"] == "A"){
+                    $perfil = "Administrador";
+                  }
+                  else if ($_SESSION["tipo"] == "P"){
+                    $perfil = "PESQUISADOR";
+
+                  }
+
+                  print( $_SESSION["nomeusuario"]." - (".$perfil.")");
+                ?>
+
+                            </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
@@ -62,6 +85,7 @@
             </li>
 
           </ul>
+
 
         </nav>
         <!-- End of Topbar -->
@@ -77,49 +101,38 @@
             <form method="post" action="php/planta.php" id="form-cadPlanta">
               <input type="hidden" id="acao" name="acao" value="INCLUIR">
               <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="cad-nomeVulgar">Nome vulgar</label>
-                  <input type="text" class="form-control" id="cad-nomeVulgar" name="nomeVulgar"> 
+                  <input type="text" class="form-control" id="cad-nomeVulgar" name="nomeVulgar" required> 
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                   <label for="cad-nomeCientifico">Nome científico</label>
-                  <input type="text" class="form-control" id="cad-nomeCientifico" name="nomeCientifico"> 
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="cad-nomeCientifico" name="nomeCientifico" required> 
+                </div>              
+                <div class="form-group col-md-4">
                   <label for="cad-familia">Familia</label>
-                  <input type="text" class="form-control" id="cad-familia" name="familia"> 
+                  <input type="text" class="form-control" id="cad-familia" name="familia" required> 
                 </div>
-                <div class="form-group col-md-6">
+               <!-- <div class="form-group col-md-6">
                   <label for="cad-autor">Autor</label>
                   <input type="text" class="form-control" id="cad-autor" name="autor"> 
-                </div>
-              </div>
+                </div> -->
+              </div> 
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="cad-periodoFloracao">Periodo de Floração</label>
-                  <input type="text" class="form-control" id="cad-periodoFloracao" name="periodoFloracao"> 
-                </div> 
+                  <input type="text" class="form-control" id="cad-periodoFloracao" name="periodoFloracao" required> 
+                </div>  
                 <div class="form-group col-md-6"> 
                   <label for="cad-periodoFrutificacao">Periodo de Frutificação</label>
-                  <input type="text" class="form-control" id="cad-periodoFrutificacao" name="periodoFrutificacao"> 
+                  <input type="text" class="form-control" id="cad-periodoFrutificacao" name="periodoFrutificacao" required> 
                 </div>
               </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="cad-latitude">Latitude</label>
-                  <input type="number" step="any" class="form-control" id="cad-latitude" name="latitude"> 
-                </div> 
-                <div class="form-group col-md-6"> 
-                  <label for="cad-longitude">Longitude</label>
-                  <input type="number" step="any" class="form-control" id="cad-longitude" name="longitude"> 
-                </div>
-              </div>
+              
               <div class="row">
                 <div class="form-group col-md-12">
                   <label for="cad-distribuicaoGeografica">Distribuição geográfica</label>
-                  <input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica"> 
+                  <input type="text" class="form-control" id="cad-distribuicaoGeografica" name="distribuicaoGeografica" required> 
                 </div>
               </div>
               <div class="row">
@@ -130,9 +143,41 @@
               </div>
 
               <hr>
+              <div class="row">
+                <div class='container text-center'>
+                  <h5> Localização geográfica da planta na UENP </h5>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cad-latitude">Latitude</label>
+                  <input type="number" step="any" class="form-control" id="cad-latitude" name="latitude" required> 
+                </div> 
+                <div class="form-group col-md-6"> 
+                  <label for="cad-longitude">Longitude</label>
+                  <input type="number" step="any" class="form-control" id="cad-longitude" name="longitude" required> 
+                </div>
+                <div class="form-group col-md-12"> 
+                  <label for="cad-desclocalizacao">Descrição da Localização</label>
+                  <input type="text" class="form-control" id="cad-desclocalizacao" name="desclocalizacao"> 
+                </div>
+
+                <div class='container text-center'>
+                   <a id="link_mapa" target="_blank" href="" class="btn botao btn-user btn-block btn-info" onclick="posicaoMapa()">Visualizar no Maps Google</a>
+                </div>
+
+              <!--  <div class='container text-center'>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MapaModal">
+                    Teste do Mapa
+                  </button>
+                </div> -->
+              </div>
+              <hr>
               
               <div style="float: right">
-                <button id="btn-cadInvertebrado" class="btn botao btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
+                <button id="btn-cadInvertebrado" class="btn botao  btn-user btn-block btn-primary" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." type="submit" style="box-shadow: none !important;">Cadastrar</button>
+
+
+                <a href="lista_planta.php" id="btn-cancelcadInvertebrado" class="btn botao btn-danger btn-user btn-block" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Aguarde..." style="box-shadow: none !important;"> Cancelar
+                </a>
               </div>
             </form>
           </div>
@@ -147,7 +192,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Projeto UENP</span>
+            <span>CadeTuTatu</span>
           </div>
         </div>
       </footer>
@@ -173,11 +218,34 @@
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
-        </div>
-        <div class="modal-body">Selecione sair para deslogar.</div>
+        </div>        
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Sair</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
+          <a href="index.php" class="btn btn-primary">Sim</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Mapa Modal-->
+  <div class="modal fade bd-example-modal-lg" id="MapaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Localização da Planta</h5>
+        </div>        
+        <div class="modal-body">
+          <div id="map"></div>
+              <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+              <script
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+                async
+              ></script>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
+          <a href="index.php" class="btn btn-primary">Sim</a>
         </div>
       </div>
     </div>
@@ -199,6 +267,38 @@
   <!-- Page level custom scripts -->
   <!--<script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>-->
+
+
+<script>
+    function posicaoMapa() {
+      var lat = document.getElementById("cad-latitude").value;
+      var long = document.getElementById("cad-longitude").value;
+
+
+
+      if ((lat == "") || (long == "")){
+        alert("Coordenadas inválidas! Carregando posição do Campus Luiz Meneghel!");
+
+
+
+        var nc = document.getElementById("link_mapa").href="https://maps.google.com/?q=-23.10924578122536,-50.35934526155142";
+
+      } else {
+          var latlong = lat.concat(",").concat(long);
+          var posMaps = "https://maps.google.com/?q=";
+          var posMaps = posMaps.concat(latlong);
+           var nc = document.getElementById("link_mapa").href=posMaps;
+        
+      }
+    
+
+
+
+
+
+    }
+
+</script>
 
 </body>
 
