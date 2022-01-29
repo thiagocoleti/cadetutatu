@@ -2,7 +2,7 @@
     $_nomeVulgar = $_POST["nomeVulgar"];
     $_nomeCientifico = $_POST["nomeCientifico"];
     $_familia = $_POST["familia"];
-    $_autor = $_POST["autor"];
+    $_autor = "";
     $_periodoFloracao = $_POST["periodoFloracao"];
     $_periodoFrutificacao = $_POST["periodoFrutificacao"];
     $_distribuicaoGeografica = $_POST["distribuicaoGeografica"];
@@ -10,48 +10,58 @@
 
     $_latitude = doubleval($_POST["latitude"]);
     $_longitude = doubleval($_POST["longitude"]); 
+    $_desclocalizacao = $_POST["desclocalizacao"];
 
     $_acao = $_POST["acao"]; 
 
     if ($_acao == "INCLUIR") {
-        inserir($_nomeVulgar, $_nomeCientifico, $_familia, $_autor, $_periodoFloracao, $_periodoFrutificacao, $_latitude, $_longitude, $_distribuicaoGeografica, $_informacoes);
+        inserir($_nomeVulgar, $_nomeCientifico, $_familia, $_autor, $_periodoFloracao, $_periodoFrutificacao, $_latitude, $_longitude, $_distribuicaoGeografica, $_informacoes, $_desclocalizacao);
     }
     else if ($_acao == "ALTERAR") {
         $_idPlanta = $_POST["idPlanta"]; 
         alterar($_idPlanta, $_nomeVulgar, $_nomeCientifico, $_familia, $_autor, $_periodoFloracao, $_periodoFrutificacao, $_latitude, $_longitude, $_distribuicaoGeografica, $_informacoes);
     }
 
-    function inserir($nomeVulgar, $nomeCientifico, $familia, $autor, $periodoFloracao, $periodoFrutificacao, $latitude, $longitude, $distribuicaoGeografica, $informacoes) {
+    function inserir($nomeVulgar, $nomeCientifico, $familia, $autor, $periodoFloracao, $periodoFrutificacao, $latitude, $longitude, $distribuicaoGeografica, $informacoes, $desclocalizacao) {
         require("connection_db_mysql.php");
 
+        
+        try{
         $stmt = $conn->prepare("
             INSERT INTO plantas (
                 nome_vulgar,
                 nome_cientifico,
-                familia, 
-                autor,
-                periodo_floracao,
-                periodo_frutificacao,
+                familia,                
+                per_floracao,
+                per_frutificacao,
                 latitude,
                 longitude,
                 distribuicao_geografica,
-                outras_informacoes
+                outras_informacoes,
+                desc_localizacao
             )
-            VALUES(:nv, :nc, :fam, :aut, :pflo, :pfru, :la, :lo, :dg, :oi)
+            VALUES(:nv, :nc, :fam, :pflo, :pfru, :la, :lo, :dg, :oi, :dl)
         ");
 
         $stmt->bindParam(":nv", $nomeVulgar);
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+      //  $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":pflo", $periodoFloracao);
         $stmt->bindParam(":pfru", $periodoFrutificacao);
         $stmt->bindParam(":la", $latitude);
         $stmt->bindParam(":lo", $longitude); 
         $stmt->bindParam(":dg", $distribuicaoGeografica);
         $stmt->bindParam(":oi", $informacoes);
+        $stmt->bindParam(":dl", $desclocalizacao);
 
         $stmt->execute(); 
+        //echo "Executou";
+
+
+        } catch(Exception $ex){
+           echo 'Message: ' .$ex->getMessage();
+        }
 
         header("Location: ../lista_planta.php"); 
     }
@@ -64,10 +74,9 @@
             SET 
                 nome_vulgar = :nv,
                 nome_cientifico = :nc,
-                familia = :fam,
-                autor = :aut, 
-                periodo_floracao = :pflo,
-                periodo_frutificacao = :pfru,
+                familia = :fam,                
+                per_floracao = :pflo,
+                per_frutificacao = :pfru,
                 latitude = :la,
                 longitude = :lo, 
                 distribuicao_geografica = :dg,
@@ -78,7 +87,7 @@
         $stmt->bindParam(":nv", $nomeVulgar);
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":fam", $familia);
-        $stmt->bindParam(":aut", $autor);
+        //$stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":pflo", $periodoFloracao);
         $stmt->bindParam(":pfru", $periodoFrutificacao);
         $stmt->bindParam(":la", $latitude);
