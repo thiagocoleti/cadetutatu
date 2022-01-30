@@ -9,6 +9,7 @@
 
  ?>
 
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,6 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+ 
+</head>
 
   <title>Cadê Tu, Tatu?</title>
 
@@ -77,6 +80,9 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
+                <?php
+                  include "menu_usuario.php";
+                ?>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Sair
@@ -163,13 +169,12 @@
                 <div class='container text-center'>
                    <a id="link_mapa" target="_blank" href="" class="btn botao btn-user btn-block btn-info" onclick="posicaoMapa()">Visualizar no Maps Google</a>
                 </div>
+               
+                <!--  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#MapaModal">Open Modal</button>  -->
+              </div> 
 
-              <!--  <div class='container text-center'>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MapaModal">
-                    Teste do Mapa
-                  </button>
-                </div> -->
-              </div>
+             
+             
               <hr>
               
               <div style="float: right">
@@ -185,8 +190,27 @@
         </div>
         <!-- /.container-fluid -->
 
+        
+
       </div>
       <!-- End of Main Content -->
+
+      <!-- código fonte do MAPA - ver -->
+      <!-- <script type="text/javascript"
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F0pv-T2Tm4xlNXa043XVhzv2YH7MvKY&callback=myMap"
+      ></script>
+
+      <script type="text/javascript">
+         function myMap() {
+          var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+          };
+          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          }
+        
+      </script>
+       <div id="googleMap" style="width:100%; height:400px"></div> -->
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -235,14 +259,25 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Localização da Planta</h5>
         </div>        
-        <div class="modal-body">
-          <div id="map"></div>
-              <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-              <script
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
-                async
-              ></script>
-        </div>
+          <div class="modal-body">
+               <script type="text/javascript">
+                 function myMap() {
+                  var mapProp= {
+                    center:new google.maps.LatLng(51.508742,-0.120850),
+                    zoom:5,
+                  };
+                  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                  }
+                
+                </script>
+                 <script type="text/javascript"
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F0pv-T2Tm4xlNXa043XVhzv2YH7MvKY&callback=myMap"
+                  ></script>
+              
+              <div id="googleMap" style="width:100%; height:400px"></div> 
+          </div>        
+             
+        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
           <a href="index.php" class="btn btn-primary">Sim</a>
