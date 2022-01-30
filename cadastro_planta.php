@@ -197,7 +197,7 @@
 
       <!-- código fonte do MAPA - ver -->
       <!-- <script type="text/javascript"
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F0pv-T2Tm4xlNXa043XVhzv2YH7MvKY&callback=myMap"
+              src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=myMap"
       ></script>
 
       <script type="text/javascript">
