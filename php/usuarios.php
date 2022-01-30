@@ -3,10 +3,21 @@
 
 	//$_idusuario = $_POST["idusuario"];
 	//$_nomeusuario = $_POST["nomeusuario"];
-	$_emailusuario = $_POST["emailusuario"];
-	$_senhausuario = $_POST["senhausuario"];
+	if (isset($_POST["emailusuario"])){
+		$_emailusuario = $_POST["emailusuario"];
+	}
+	else{
+		$_emailusuario = "";
+	}
+
+
+	if (isset($_POST["senhausuario"])){
+		$_senhausuario = $_POST["senhausuario"];
+	}
 	//$_tipousuario = $_POST["tipousuario"];
 	//$_deptousuario = $_POST["deptousuario"];
+
+
 
 	$_acao = $_POST["acao"];
 	//	echo $_acao;
@@ -29,6 +40,7 @@
 	        $usuariologado = carregaSessao($_emailusuario);
 	        $_SESSION["nomeusuario"] = $usuariologado[0];
 	        $_SESSION["tipo"] = $usuariologado[1];
+	        $_SESSION["idusuario"] = $usuariologado[2];
 
 	        //echo $_SESSION["usuario"]. "<br>";
 	        //echo $_SESSION["nomeusuario"]. "<br>";
@@ -39,16 +51,18 @@
 		 }
 	
 	}
-
+	else if ($_acao == "SENHA"){
+			alterasenha($_SESSION["idusuario"], $_senhausuario);
+	}
 
 	function carregaSessao($usu){
 		include 'connection_db_mysql.php';
-		$sql2 = "select nome_usuario, tipo_usuario from usuarios where email_usuario = '$usu'";
+		$sql2 = "select nome_usuario, tipo_usuario, id_usuario from usuarios where email_usuario = '$usu'";
 		 	try {
     		$resultbusca = $conn->query($sql2);
         	if ($resultbusca->rowCount() > 0) {
                 $nome_usu = $resultbusca->fetch(PDO::FETCH_ASSOC);
-                $usuariologado = array($nome_usu["nome_usuario"],  $nome_usu["tipo_usuario"] );
+                $usuariologado = array($nome_usu["nome_usuario"],  $nome_usu["tipo_usuario"], $nome_usu["id_usuario"] );
               
                return $usuariologado;
         	}
@@ -83,6 +97,36 @@
             echo $ex;
             return 0;                                  
         }
+	}
+
+	function alteraSenha($usu, $senha){
+		include 'connection_db_mysql.php';
+		try{
+		 		 $stmt = $conn->prepare("
+		            UPDATE usuarios
+		            SET 
+		                senha_usuario = password('$senha')		                
+		            WHERE id_usuario = :id
+		        "); 
+		        
+		        $stmt->bindParam(":id", $usu);
+
+		        $stmt->execute();
+
+		       
+		       echo "<script>";
+		       echo "alert('Senha alterada com sucesso!');";
+		       echo "window.location.href ='../home.php'";
+		       echo "</script>";
+		        
+		}
+		catch(Exception $ex){
+  				 echo "<script>";
+		       echo "alert('Não foi possível alterar a senha! Informe o administrador');";
+		       echo "window.location.href ='../home.php'";
+		       echo "</script>";
+		}
+
 	}
 
 
