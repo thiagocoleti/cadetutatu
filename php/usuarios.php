@@ -2,20 +2,32 @@
 	session_start();	
 
 	//$_idusuario = $_POST["idusuario"];
-	//$_nomeusuario = $_POST["nomeusuario"];
+
+	if (isset($_POST["nomeusuario"])){
+		$_nomeusuario = $_POST["nomeusuario"];	
+	}else{ 	$_nomeusuario = ""; }
+
 	if (isset($_POST["emailusuario"])){
 		$_emailusuario = $_POST["emailusuario"];
-	}
-	else{
-		$_emailusuario = "";
-	}
+	}else{ 		$_emailusuario = ""; }
+
+	if (isset($_POST["tipousuario"]))
+	{
+		$_tipousuario = $_POST["tipousuario"];
+	} else{ $_tipousuario = ""; }
+
+	if (isset($_POST["deptousuario"])){
+		$_deptousuario = $_POST["deptousuario"];
+	}else{ 	$_deptousuario = ""; }
 
 
+
+	//senha é utilizada para LOGIN
 	if (isset($_POST["senhausuario"])){
 		$_senhausuario = $_POST["senhausuario"];
 	}
-	//$_tipousuario = $_POST["tipousuario"];
-	//$_deptousuario = $_POST["deptousuario"];
+	
+	
 
 
 
@@ -23,6 +35,8 @@
 	//	echo $_acao;
 
 	if ($_acao == "INCLUIR"){
+		inserir($_nomeusuario, $_emailusuario, $_deptousuario, $_tipousuario);
+
 
 	}
 	else if ($_acao == "ALTERAR"){
@@ -55,6 +69,41 @@
 			alterasenha($_SESSION["idusuario"], $_senhausuario);
 	}
 
+
+
+
+	 function inserir($nome, $email, $depto, $funcao) {
+        require("connection_db_mysql.php");
+
+        
+        try{
+        $stmt = $conn->prepare("
+            INSERT INTO usuarios (
+                nome_usuario,
+                email_usuario,
+                tipo_usuario,
+                depto_usuario,
+                senha_usuario,
+                status_usuario
+            )
+            VALUES('".$nome."', '".$email."', '".$funcao."', '".$depto."', md5('1234'), 'A') 
+        ");
+
+    //     echo var_dump($stmt);
+        $stmt->execute(); 
+        
+		echo "<script>";
+		echo "alert('Usuário cadastrado com sucesso!');";
+		echo "window.location.href ='../lista_usuarios.php'";
+		echo "</script>";
+
+        } catch(mysqli_sql_exception $ex){
+           echo 'Message: ' .$ex->getMessage();
+        }
+
+   
+    }
+
 	function carregaSessao($usu){
 		include 'connection_db_mysql.php';
 		$sql2 = "select nome_usuario, tipo_usuario, id_usuario from usuarios where email_usuario = '$usu'";
@@ -81,7 +130,7 @@
 	function verificarLogin($usu, $senha){
 	 	include 'connection_db_mysql.php';
 		$sql_usuario = "select count(*) as qtde from usuarios where email_usuario = '$usu'
-		 	and senha_usuario = password('$senha')";
+		 	and senha_usuario = md5('$senha')";
 		//echo $sql;
 		try {
     		$resultbusca = $conn->query($sql_usuario);
@@ -105,7 +154,7 @@
 		 		 $stmt = $conn->prepare("
 		            UPDATE usuarios
 		            SET 
-		                senha_usuario = password('$senha')		                
+		                senha_usuario = md5('$senha')		                
 		            WHERE id_usuario = :id
 		        "); 
 		        
