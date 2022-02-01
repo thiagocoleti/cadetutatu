@@ -103,7 +103,7 @@
 	            </thead>
 	            <tbody>
                 <?php
-                //  require_once("php/planta_list.php");
+                  require_once("php/usuarios_list.php");
                 ?>
 	            </tbody>
 	          </table>
