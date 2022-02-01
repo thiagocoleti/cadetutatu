@@ -33,7 +33,7 @@
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
             <a class="collapse-item" href="lista_invertebrado_galeria.php">Galeria</a>            
             <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
+           <!-- <a class="collapse-item" href="#">Ocorrências</a>                         -->
           </div>
         </div>
       </li>
@@ -51,7 +51,7 @@
             <!-- <a class="collapse-item" href="referencia_vertebrado.php">Adicionar referência</a> -->
             <a class="collapse-item" href="lista_vertebrado_galeria.php">Galeria</a>            
             <hr class="sidebar-divider">
-            <a class="collapse-item" href="#">Ocorrências</a>                        
+          <!--  <a class="collapse-item" href="#">Ocorrências</a>                         -->
           </div>
         </div>
       </li>
@@ -67,7 +67,7 @@
             <a class="collapse-item" href="lista_planta.php">Listar</a>
             <a class="collapse-item" href="cadastro_planta.php">Cadastrar</a>            
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
-            <a class="collapse-item" href="galeria_planta.php">Galeria</a>            
+            <a class="collapse-item" href="lista_planta_galeria.php">Galeria</a>            
           </div>
         </div>
       </li>
@@ -82,7 +82,7 @@
              <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="lista_usuarios.php">Listar</a>
-                <a class="collapse-item" href="#">Cadastrar</a>            
+                <a class="collapse-item" href="cadastro_usuario.php">Cadastrar</a>            
                 <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
                           
             </div>
