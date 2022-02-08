@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <script type="text/javascript"
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCubOGy1a9ALfvJw4f4_8vjlheiXVDgbFU&callback=myMap"
+              src="https://maps.googleapis.com/maps/api/js?key=hh&callback=myMap"
    ></script>
 
     <script type="text/javascript">
@@ -108,7 +108,7 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F0pv-T2Tm4xlNXa043XVhzv2YH7MvKY&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=hh&callback=myMap"></script>
 
 </body>
 </html>
