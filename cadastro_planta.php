@@ -31,6 +31,8 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+ 
+
 </head>
 
 <body id="page-top">
@@ -149,30 +151,56 @@
               </div>
 
               <hr>
-              <div class="row">
+           <!--   <div class="row">
                 <div class='container text-center'>
                   <h5> Localização geográfica da planta na UENP </h5>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="cad-latitude">Latitude</label>
+                  <label for="cad-latitude">Latitude (limite de 6 casas decimais)</label>
                   <input type="number" step="any" class="form-control" id="cad-latitude" name="latitude" required> 
                 </div> 
                 <div class="form-group col-md-6"> 
-                  <label for="cad-longitude">Longitude</label>
+                  <label for="cad-longitude">Longitude (limite de 6 casas decimais)</label>
                   <input type="number" step="any" class="form-control" id="cad-longitude" name="longitude" required> 
                 </div>
                 <div class="form-group col-md-12"> 
                   <label for="cad-desclocalizacao">Descrição da Localização</label>
                   <input type="text" class="form-control" id="cad-desclocalizacao" name="desclocalizacao"> 
-                </div>
+                </div>                      
+             
+              </div> <br>
+              <div id="map" style="height: 400px"></div>
 
-                <div class='container text-center'>
-                   <a id="link_mapa" target="_blank" href="" class="btn botao btn-user btn-block btn-info" onclick="posicaoMapa()">Visualizar no Maps Google</a>
-                </div>
-               
-                <!--  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#MapaModal">Open Modal</button>  -->
-              </div> 
+                <script>
+    
+                    var map = L.map('map').setView([-23.1064, -50.3604], 13);
 
+
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGhpYWdvY29sZXRpIiwiYSI6ImNrejczMzgwOTE2N2kyc3R2YWhxd3plNnAifQ.717Vgp0dYc_oAv0EzGcvgg', {
+                    attribution: 'CadeTuTatu &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    maxZoom: 18,
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    zoomOffset: -1,
+                    accessToken: 'your.mapbox.access.token'
+                }).addTo(map);
+
+
+
+                  function onMapClick(e) {
+                      alert("You clicked the map at " + e.latlng);
+                    var marker = L.marker()
+                      .setLatLng(e.latlng)                      
+                      .addTo(map);
+
+                    document.getElementById('cad-latitude').value = e.latlng.lat;
+                    document.getElementById('cad-longitude').value = e.latlng.lng;
+                  }
+
+                  map.on('click', onMapClick);
+               </script>
+
+      </div> -->
              
              
               <hr>
@@ -190,27 +218,10 @@
         </div>
         <!-- /.container-fluid -->
 
-        
-
-      </div>
+          
       <!-- End of Main Content -->
 
-      <!-- código fonte do MAPA - ver -->
-      <!-- <script type="text/javascript"
-              src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=myMap"
-      ></script>
-
-      <script type="text/javascript">
-         function myMap() {
-          var mapProp= {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-          };
-          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-          }
-        
-      </script>
-       <div id="googleMap" style="width:100%; height:400px"></div> -->
+     
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -271,7 +282,7 @@
                 
                 </script>
                  <script type="text/javascript"
-                    src="https://maps.googleapis.com/maps/api/js?key=key&callback=myMap"
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2F0pv-T2Tm4xlNXa043XVhzv2YH7MvKY&callback=myMap"
                   ></script>
               
               <div id="googleMap" style="width:100%; height:400px"></div> 

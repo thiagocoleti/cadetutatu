@@ -4,7 +4,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center" href="home.php">
         <div class="sidebar-brand-icon" style="margin-top: 20px;">
           <img src="./img/logo.png" width=80 height=70>
         </div>
@@ -33,7 +33,8 @@
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
             <a class="collapse-item" href="lista_invertebrado_galeria.php">Galeria</a>            
             <hr class="sidebar-divider">
-           <!-- <a class="collapse-item" href="#">Ocorrências</a>                         -->
+           <a class="collapse-item" href="#">Lista de ocorrências</a>
+           <a class="collapse-item" href="#">Inserir ocorrência</a>
           </div>
         </div>
       </li>
@@ -67,7 +68,10 @@
             <a class="collapse-item" href="lista_planta.php">Listar</a>
             <a class="collapse-item" href="cadastro_planta.php">Cadastrar</a>            
             <!-- <a class="collapse-item" href="referencia_invertebrado.php">Adicionar referência</a> -->
-            <a class="collapse-item" href="lista_planta_galeria.php">Galeria</a>            
+            <a class="collapse-item" href="lista_planta_galeria.php">Galeria</a>          
+            <hr class="sidebar-divider">
+           <a class="collapse-item" href="#">Lista de ocorrências</a>
+           <a class="collapse-item" href="ocorrencia_planta.php">Inserir ocorrência</a>  
           </div>
         </div>
       </li>
