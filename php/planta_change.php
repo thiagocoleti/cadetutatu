@@ -52,7 +52,7 @@
         echo '</div>';
     echo '</div>';
     echo '<hr>';
-    echo '<div class="row">';
+ /*   echo '<div class="row">';
          echo '<div class="container text-center">';
          echo '<h5> Localização geográfica da planta na UENP </h5>';
         echo '</div>';
@@ -74,6 +74,6 @@
         echo '<div class="container text-center">';
                    echo '<a id="link_mapa" target="_blank" href="https://maps.google.com/?q='.$result[0]["latitude"].','.$result[0]["longitude"].'" class="btn botao btn-user btn-block btn-info" >Visualizar no Maps Google</a>
                 </div>';
-    echo '</div>';
+    echo '</div>';*/
     
 ?>

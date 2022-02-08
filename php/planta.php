@@ -8,8 +8,8 @@
     $_distribuicaoGeografica = $_POST["distribuicaoGeografica"];
     $_informacoes = $_POST["outrasInformacoes"];
 
-    $_latitude = doubleval($_POST["latitude"]);
-    $_longitude = doubleval($_POST["longitude"]); 
+   // $_latitude = doubleval($_POST["latitude"]);
+   // $_longitude = doubleval($_POST["longitude"]); 
     $_desclocalizacao = $_POST["desclocalizacao"];
 
     $_acao = $_POST["acao"]; 
@@ -34,29 +34,23 @@
                 familia,                
                 per_floracao,
                 per_frutificacao,
-                latitude,
-                longitude,
                 distribuicao_geografica,
-                outras_informacoes,
-                desc_localizacao
+                outras_informacoes
             )
-            VALUES(:nv, :nc, :fam, :pflo, :pfru, :la, :lo, :dg, :oi, :dl)
+            VALUES(:nv, :nc, :fam, :pflo, :pfru, :dg, :oi)
         ");
 
         $stmt->bindParam(":nv", $nomeVulgar);
         $stmt->bindParam(":nc", $nomeCientifico);
         $stmt->bindParam(":fam", $familia);
-      //  $stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":pflo", $periodoFloracao);
         $stmt->bindParam(":pfru", $periodoFrutificacao);
-        $stmt->bindParam(":la", $latitude);
-        $stmt->bindParam(":lo", $longitude); 
         $stmt->bindParam(":dg", $distribuicaoGeografica);
         $stmt->bindParam(":oi", $informacoes);
-        $stmt->bindParam(":dl", $desclocalizacao);
+   
 
         $stmt->execute(); 
-        //echo "Executou";
+        //echo var_dump($stmt);
 
 
         } catch(Exception $ex){
@@ -77,8 +71,6 @@
                 familia = :fam,                
                 per_floracao = :pflo,
                 per_frutificacao = :pfru,
-                latitude = :la,
-                longitude = :lo, 
                 distribuicao_geografica = :dg,
                 outras_informacoes = :oi
             WHERE id_planta = :id
@@ -90,8 +82,6 @@
         //$stmt->bindParam(":aut", $autor);
         $stmt->bindParam(":pflo", $periodoFloracao);
         $stmt->bindParam(":pfru", $periodoFrutificacao);
-        $stmt->bindParam(":la", $latitude);
-        $stmt->bindParam(":lo", $longitude); 
         $stmt->bindParam(":dg", $distribuicaoGeografica);
         $stmt->bindParam(":oi", $informacoes);
         
