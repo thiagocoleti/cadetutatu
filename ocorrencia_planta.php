@@ -166,7 +166,7 @@
                     var map = L.map('map').setView([-23.1064, -50.3604], 13);
 
 
-                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGhpYWdvY29sZXRpIiwiYSI6ImNrejczMzgwOTE2N2kyc3R2YWhxd3plNnAifQ.717Vgp0dYc_oAv0EzGcvgg', {
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='s', {
                     attribution: 'CadeTuTatu &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                     maxZoom: 18,
                     id: 'mapbox/streets-v11',
